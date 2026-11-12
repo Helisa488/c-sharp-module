@@ -1,33 +1,30 @@
 // Kigali Campus Library kiosk.
 // Step 6 (README.md): replace the loose variables below with a Book object and a Member object.
 using LibraryKiosk;
+using LibraryKiosk.Models;
 
 Console.WriteLine("=== Kigali Campus Library Kiosk ===");
 
-string bookTitle = "Clean Code";
-string isbn = "978-0132350884";
-int pages = 464;
+var book = new Book("Clean Code", "978-0132350884", 464);
 decimal replacementFee = 25.5m;
 
-string memberName = "Aline Uwase";
-int maxBooks = 3;
-int booksCheckedOut = 0;
+var member = new Member("Aline Uwase", 3);
 
-Console.WriteLine(KioskRules.BookLine(bookTitle, isbn, pages));
-Console.WriteLine(KioskRules.MemberLine(memberName, maxBooks));
+Console.WriteLine(KioskRules.BookLine(book.Title, book.Isbn, book.Pages));
+Console.WriteLine(KioskRules.MemberLine(member.FullName, member.MaxBooks));
 
 for (int attempt = 1; attempt <= 4; attempt++)
 {
-    if (KioskRules.CanCheckOut(booksCheckedOut, maxBooks))
+    if (member.CanCheckOut())
     {
-        booksCheckedOut++;
-        Console.WriteLine($"Attempt {attempt}: {memberName} checked out {bookTitle} ({booksCheckedOut}/{maxBooks}).");
+        member.RecordCheckout();
+        Console.WriteLine($"Attempt {attempt}: {member.FullName} checked out {book.Title} ({member.BooksCheckedOut}/{member.MaxBooks}).");
     }
     else
     {
-        Console.WriteLine($"Attempt {attempt}: refused, {memberName} is at the {maxBooks}-book limit.");
+        Console.WriteLine($"Attempt {attempt}: refused, {member.FullName} is at the {member.MaxBooks}-book limit.");
     }
 }
 
-decimal feeForAll = KioskRules.ReplacementFee(replacementFee, booksCheckedOut);
-Console.WriteLine($"Replacement fee if all {booksCheckedOut} copies are lost: {feeForAll:F2}");
+decimal feeForAll = KioskRules.ReplacementFee(replacementFee, member.BooksCheckedOut);
+Console.WriteLine($"Replacement fee if all {member.BooksCheckedOut} copies are lost: {feeForAll:F2}");
