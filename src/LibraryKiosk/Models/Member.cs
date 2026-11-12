@@ -12,4 +12,14 @@ public class Member
         MaxBooks = maxBooks;
         BooksCheckedOut = 0;
     }
+
+    public bool CanCheckOut()
+    {
+        return KioskRules.CanCheckOut(BooksCheckedOut, MaxBooks);
+    }
+
+    public void RecordCheckout()
+    {
+        BooksCheckedOut++;
+    }
 }
