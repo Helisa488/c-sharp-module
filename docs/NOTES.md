@@ -25,3 +25,14 @@ And also in drill 02 test, they was expecting false but not
 
 ### One decision I would defend
 I can defend using a method and it's call.
+
+## d03
+
+### What I tried
+I changed the setter to public and assigned member.BooksCheckedOut = 5 in Program.cs.
+
+### What broke
+The compiler rejected the assignment with CS0272 because the setter was private. When I changed the setter to public, the test BooksCheckedOut_HasAPrivateSetter failed and said the property needs { get; private set; }.
+
+### One decision I would defend
+I can defend creating classes in a model folder.
