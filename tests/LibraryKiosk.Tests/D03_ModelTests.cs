@@ -1,4 +1,3 @@
-#if false
 using LibraryKiosk.Models;
 
 namespace LibraryKiosk.Tests;
@@ -70,4 +69,3 @@ public class D03_ModelTests
         Assert.True(setter!.IsPrivate, "BooksCheckedOut needs { get; private set; }");
     }
 }
-#endif
