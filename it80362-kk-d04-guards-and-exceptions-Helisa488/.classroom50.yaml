@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "it80362"
+assignment: "kk-d04-guards-and-exceptions"
+owner:
+  username: "emerson2222"
+  id: 200269863
+  accepted_at: "2026-11-16T06:06:50Z"
+source:
+  owner: "Pelino-Courses"
+  owner_id: 106084992
+  repo: "kk-d04-guards-and-exceptions"
+  branch: "main"

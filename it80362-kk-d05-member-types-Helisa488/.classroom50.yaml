@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "it80362"
+assignment: "kk-d05-member-types"
+owner:
+  username: "emerson2222"
+  id: 200269863
+  accepted_at: "2026-11-18T12:10:31Z"
+source:
+  owner: "Pelino-Courses"
+  owner_id: 106084992
+  repo: "kk-d05-member-types"
+  branch: "main"
